@@ -6,6 +6,10 @@
 <title>Acto Fallido - Taller de Psicodrama</title>
 
 <style>
+:root{
+  --accent:#ff4d6d;
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -14,6 +18,18 @@ body {
     overflow-x: hidden;
 }
 
+/* PROGRESS BAR */
+.progress-bar{
+  position: fixed;
+  top:0;
+  left:0;
+  height:3px;
+  background:var(--accent);
+  width:0%;
+  z-index:2000;
+}
+
+/* NAV */
 nav {
     position: fixed;
     top: 0;
@@ -21,7 +37,7 @@ nav {
     display: flex;
     justify-content: center;
     background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
     padding: 12px;
     z-index: 1000;
 }
@@ -30,14 +46,29 @@ nav a {
     color: white;
     margin: 0 18px;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
-    opacity: 0.8;
-    transition: 0.3s;
+    opacity: 0.7;
+    position: relative;
 }
 
-nav a:hover {
-    opacity: 1;
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--accent);
+  transition:0.3s;
+}
+
+nav a:hover{
+  opacity:1;
+}
+
+nav a:hover::after{
+  width:100%;
 }
 
 /* HERO */
@@ -48,7 +79,6 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
     background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('acto_fallido_1.jpeg');
     background-size: cover;
     background-position: center;
@@ -56,9 +86,8 @@ header {
 
 header h1 {
     font-size: 4.5rem;
-    margin: 0;
     letter-spacing: 3px;
-    z-index: 1;
+    animation: fadeUp 1s ease;
 }
 
 header p {
@@ -66,29 +95,63 @@ header p {
     max-width: 700px;
     margin-top: 15px;
     line-height: 1.4;
-    opacity: 0.95;
-    z-index: 1;
     text-shadow: 0px 0px 12px rgba(255,255,255,0.25);
+    animation: fadeUp 1.4s ease;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);} 
+  to{opacity:1; transform:translateY(0);} 
 }
 
 /* SECTIONS */
 section {
-    padding: 90px 20px;
+    padding: 100px 20px;
     max-width: 900px;
     margin: auto;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 h2 {
-    margin-bottom: 20px;
     font-size: 2rem;
+    margin-bottom:20px;
 }
 
-/* SECCIÓN CON IMAGEN */
+/* IMAGE */
 .section-image {
     margin-top: 30px;
     width: 100%;
     border-radius: 12px;
-    filter: brightness(0.8) contrast(1.1);
+    transition:0.5s;
+}
+
+.section-image:hover{
+  transform:scale(1.03);
+  filter:brightness(1);
+}
+
+/* CARDS (fechas) */
+.card{
+  background: rgba(255,255,255,0.03);
+  padding:20px;
+  border-radius:12px;
+  margin-bottom:15px;
+  backdrop-filter: blur(8px);
+  border:1px solid rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(255,255,255,0.15);
 }
 
 /* FLOATING BUTTONS */
@@ -99,11 +162,10 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    z-index: 1000;
 }
 
 .floating-btn {
-    background-color: #ff4d6d;
+    background-color: var(--accent);
     color: white;
     border: none;
     padding: 14px 18px;
@@ -115,15 +177,14 @@ h2 {
 }
 
 .floating-btn:hover {
-    transform: scale(1.08);
-    background-color: #ff1f4d;
+    transform: scale(1.1) translateY(-2px);
 }
 
 .floating-btn.secondary {
     background-color: #111;
-    box-shadow: 0 0 10px rgba(255,255,255,0.15);
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
@@ -134,6 +195,8 @@ footer {
 </head>
 
 <body>
+
+<div class="progress-bar" id="progress"></div>
 
 <nav>
     <a href="#inicio">Inicio</a>
@@ -155,44 +218,42 @@ footer {
 
 <section id="quees">
     <h2>¿Qué es Acto Fallido?</h2>
-    <p>
-        Espacio a desarrollar...
-    </p>
-
-    <img src="acto_fallido_1.jpeg" alt="Acto Fallido" class="section-image">
+        <p> Llegás. No sabés bien qué va a pasar. </p>
+        <p> Hay otros. También están ahí, esperando. Nadie actúa todavía. Nadie sabe del todo qué decir. </p>
+        <p> Y sin embargo, algo empieza. </p>
+        <p> Una escena mínima. Un gesto. Una palabra que no encaja del todo. <br> Algo se escapa. </p> 
+        <p> Acto Fallido no es un taller para aprender a actuar. 
+            <br> Tampoco es un espacio tradicional de terapia. </p> 
+        <p> Es un dispositivo grupal donde lo que no estaba previsto aparece en escena. Donde lo que se intenta controlar, falla. 
+            <br> Y en ese fallo, se revela algo propio. </p> <p> No hace falta experiencia previa. 
+            <br> Solo la disposición a habitar lo que surja. </p> <p> Porque a veces, <br> lo más verdadero no se dice. 
+            <br> Se actúa. 
+        </p>
 </section>
 
 <section id="fechas">
     <h2>Próximas fechas</h2>
-    <p>
-        Información a completar...
-    </p>
+    <div class="card">Sábado 12 - 18hs</div>
+    <div class="card">Miércoles 16 - 19hs</div>
 </section>
 
 <section id="inscripcion">
     <h2>Inscripción</h2>
-    <p>
-        Próximamente formulario de Google Forms.
-    </p>
+    <div class="card">Formulario próximamente</div>
 </section>
 
 <section id="directora">
     <h2>Sobre la directora</h2>
-    <p>
-        Información sobre Priscila Abitbol...
-    </p>
+    <p>Priscila Abitbol</p>
 </section>
 
 <section id="contacto">
     <h2>Contacto</h2>
-    <p>
-        Email / Instagram / WhatsApp
-    </p>
+    <p>Instagram / WhatsApp</p>
 </section>
 
 <div class="floating-container">
     <button class="floating-btn" onclick="scrollToSection('inscripcion')">Inscribirme</button>
-    <button class="floating-btn secondary" onclick="openWhatsApp()">WhatsApp</button>
     <button class="floating-btn secondary" onclick="scrollToTop()">↑</button>
 </div>
 
@@ -201,6 +262,25 @@ footer {
 </footer>
 
 <script>
+
+// SCROLL REVEAL
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+
+// SCROLL PROGRESS
+window.addEventListener("scroll", () => {
+  const scrollTop = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById("progress").style.width = (scrollTop/height)*100 + "%";
+});
+
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -209,9 +289,6 @@ function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-function openWhatsApp() {
-    window.open('https://wa.me/', '_blank');
-}
 </script>
 
 </body>
