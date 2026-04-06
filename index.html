@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acto Fallido - Taller de Psicodrama</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(8px);
+    padding: 12px;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* HERO */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('acto_fallido_1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+header h1 {
+    font-size: 4.5rem;
+    margin: 0;
+    letter-spacing: 3px;
+    z-index: 1;
+}
+
+header p {
+    font-size: 1.6rem;
+    max-width: 700px;
+    margin-top: 15px;
+    line-height: 1.4;
+    opacity: 0.95;
+    z-index: 1;
+    text-shadow: 0px 0px 12px rgba(255,255,255,0.25);
+}
+
+/* SECTIONS */
+section {
+    padding: 90px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* SECCIÓN CON IMAGEN */
+.section-image {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 12px;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+/* FLOATING BUTTONS */
+.floating-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+}
+
+.floating-btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(255,0,80,0.4);
+    transition: 0.3s;
+}
+
+.floating-btn:hover {
+    transform: scale(1.08);
+    background-color: #ff1f4d;
+}
+
+.floating-btn.secondary {
+    background-color: #111;
+    box-shadow: 0 0 10px rgba(255,255,255,0.15);
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#quees">Qué es</a>
+    <a href="#fechas">Fechas</a>
+    <a href="#inscripcion">Inscripción</a>
+    <a href="#directora">Directora</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<header id="inicio">
+    <h1>Acto Fallido</h1>
+    <p>
+        No es actuación. No es terapia.
+        <br>
+        Es lo que aparece cuando ya no podés sostener el personaje.
+    </p>
+</header>
+
+<section id="quees">
+    <h2>¿Qué es Acto Fallido?</h2>
+    <p>
+        Espacio a desarrollar...
+    </p>
+
+    <img src="acto_fallido_1.jpeg" alt="Acto Fallido" class="section-image">
+</section>
+
+<section id="fechas">
+    <h2>Próximas fechas</h2>
+    <p>
+        Información a completar...
+    </p>
+</section>
+
+<section id="inscripcion">
+    <h2>Inscripción</h2>
+    <p>
+        Próximamente formulario de Google Forms.
+    </p>
+</section>
+
+<section id="directora">
+    <h2>Sobre la directora</h2>
+    <p>
+        Información sobre Priscila Abitbol...
+    </p>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <p>
+        Email / Instagram / WhatsApp
+    </p>
+</section>
+
+<div class="floating-container">
+    <button class="floating-btn" onclick="scrollToSection('inscripcion')">Inscribirme</button>
+    <button class="floating-btn secondary" onclick="openWhatsApp()">WhatsApp</button>
+    <button class="floating-btn secondary" onclick="scrollToTop()">↑</button>
+</div>
+
+<footer>
+    © 2026 Acto Fallido
+</footer>
+
+<script>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+function openWhatsApp() {
+    window.open('https://wa.me/', '_blank');
+}
+</script>
+
+</body>
+</html>
