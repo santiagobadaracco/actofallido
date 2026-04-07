@@ -22,6 +22,42 @@ body {
     overflow-x: hidden;
 }
 
+.nombre-directora {
+  color: var(--accent);
+}
+
+.instagram-link {
+  color: var(--accent);
+  text-decoration: none;
+  display: block;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.instagram-link:hover {
+  opacity: 0.7;
+}
+
+.social-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.05);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 0 12px rgba(255,77,109,0.5);
+}
+
 /* PROGRESS BAR */
 .progress-bar{
   position: fixed;
@@ -111,7 +147,7 @@ header p {
 
 /* SECTIONS */
 section {
-    padding: 100px 20px;
+    padding: 60px 20px;
     max-width: 900px;
     margin: auto;
     opacity:0;
@@ -195,6 +231,7 @@ footer {
     background: #111;
     font-size: 0.9rem;
 }
+
 </style>
 </head>
 
@@ -206,68 +243,115 @@ footer {
     <a href="#inicio">Inicio</a>
     <a href="#quees">Qué es</a>
     <a href="#fechas">Fechas</a>
-    <a href="#inscripcion">Inscripción</a>
+    <a href="#inscripcion">¿Cómo me inscribo?</a>
     <a href="#directora">Directora</a>
     <a href="#contacto">Contacto</a>
+    <a href="#mapa">Ubicación</a>
 </nav>
 
 <header id="inicio">
     <h1>Acto Fallido</h1>
-    <p>
-        No es actuación. No es terapia.
-        <br>
-        Es lo que aparece cuando ya no podés sostener el personaje.
+    <p> laboratorio de actuación y montaje donde la escena, el grupo y la experiencia corporal expanden la creatividad desde lo espontáneo y singular
     </p>
 </header>
 
 <section id="quees">
     <h2>¿Qué es Acto Fallido?</h2>
-
-<p> Acto fallido es un laboratorio presencial que investiga un cruce entre la actuación y el psicodrama desde una perspectiva rizomática. </p>
-<p>Es un espacio de encuentro entre lo singular y lo colectivo, donde el grupo funciona como un dispositivo creador de sentidos. Se trabaja sobre escenas que convoquen al grupo —pueden ser imaginadas, temidas, extraídas de un sueño, de una ficción— para transformarlas en materia escénica colectiva. </p>
-<p> El recorrido no apunta a una obra ni a una representación final, sino a un proceso de investigación performática atravesado por el cuerpo modificado a partir de la experiencia grupal, el juego, el deseo y la potencia del grupo como resonador de nuevas significaciones.</p>
-<p>El proceso se sostiene en la lógica de la Multiplicación Dramática, desarrollada por Pavlovsky, donde cada escena inicial es disparadora de nuevas escenas imaginadas por los otros. En esta lógica rizomática (Deleuze-Guattari), lo personal se multiplica, se deforma, se expande en nuevas significaciones. </p>
-<p>Propone abordar el hecho escénico como territorio donde lo personal se vuelve común y donde lo fallido, el error o el no-saber se integran como material creativo. Permitiendo que la potencia artística emerja fuera del control defensivo.</p>
-<p>Conceptos que se integran desde la experiencia física, modificando al cuerpo a partir de la experiencia sensible entre: <p class="cursiva"> vínculo - presente - espontaneidad - creatividad - estado creativo - grupalidad - modificación - nuevas subjetividades - desinstitucionalización de los hábitos - cartografías del movimiento</p></p>
+    <p>Acto Fallido es un laboratorio de investigación escénica, actoral y creación colectiva.
+Un espacio donde el grupo funciona como dispositivo creador de sentido. Donde lo que emerge no estaba planeado, no pertenece a nadie en particular, y no podría haber aparecido solo.
+Se trabaja con escenas —imaginadas, temidas, extraídas de un sueño, de una ficción o improvisadas— que se transforman en materia escénica compartida. No importa si son "reales". Importa que sean porosas: que algo en ellas resuene, se expanda, mute en contacto con los otros. Con un sentido estético y creativo, cuyo efecto produce nuevas subjetividades.
+El proceso se sostiene en la Multiplicación Dramática de Pavlovsky: cada escena dispara nuevas escenas imaginadas por el grupo. Lo personal se multiplica, se deforma, aparece en formas que nadie anticipó. El error, el no-saber y lo fallido no son obstáculos — son el material.
+Trabajamos desde el cuerpo presente, desde la experiencia sensible: moverse, mirar, ser mirado, perder el control, encontrar algo ahí.
+No hay obra final. Hay un proceso. Y algo que se modifica en quienes lo transitan.</p>
 
 </section>
 
 <section id="fechas">
-    <h2>Próximas fechas</h2>
-    <div class="card">Proximamente más fechas </div>
-    <div class="card">Proximamente más fechas</div>
+    <h2>INSCRIPCIONES ABIERTAS</h2>
+
+    <div class="card">
+        <strong style="color: var(--accent);">Animal Teatro</strong><br>
+        <span style="opacity:0.8;">Castro 561, CABA</span>
+
+        <p style="margin-top:10px;">
+            Abril - Mayo - Junio
+        </p>
+
+        <p style="opacity:0.9;">
+            Sábados de 14 a 16hs
+        </p>
+    </div>
 </section>
 
 <section id="inscripcion">
-    <h2>Inscripción</h2>
-    <p>Completá el formulario para reservar tu lugar.</p>
+    <h2>¿Cómo me inscribo?</h2>
 
-    <div style="margin-top:30px; border-radius:12px; overflow:hidden; box-shadow:0 0 25px rgba(0,0,0,0.6);">
-        <iframe 
-            src="https://docs.google.com/forms/d/e/TU_ID_DE_FORM/viewform?embedded=true" 
-            width="100%" 
-            height="800" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0"
-            style="background:#111;">
-            Cargando…
-        </iframe>
-    </div>
+    <p>Para inscribirte, enviá un mail a:</p>
+
+    <p style="color: var(--accent); font-weight: bold; font-size: 1.1rem;">
+        <a href="mailto:talleres.priscilaabitbol@gmail.com" style="color: var(--accent); text-decoration: none;">
+            talleres.priscilaabitbol@gmail.com
+        </a>
+    </p>
+
+    <p style="margin-top:15px; opacity:0.8;">
+        Incluí tu nombre, edad y experiencia (si tenés).
+    </p>
 </section>
 
 <section id="directora">
     <h2>Sobre la directora</h2>
-    <p>Priscila Abitbol</p>
+        <h3 class="nombre-directora"> Priscila Abitbol</h3>
+    <p>Ella es actriz, guionista y licenciada en Psicología (UBA), con más de diez años de trayectoria en cine, teatro, televisión y publicidad.</p>
+    <p>Como guionista y actriz integra el elenco de Solo fanáticos —estrenada en más de cincuenta salas del país— junto a Nacha Guevara, Benjamín Vicuña, Emilia Attias, Rafael Spregelburd y Martín Slipak, entre otros. </p>
+    <p>Protagoniza Fin de semana de la dulzura (dir. Fernando Reale Toiran), ganadora de dos premios en la competencia oficial del Festival Buenos Aires Rojo Sangre. Protagoniza el cortometraje Lola, dirigido por Úrsula Carreño, e integra el elenco de Toda muerte es un suicidio, invitado a festivales internacionales como Leda's Monologue (Grecia) y NOVA Fest (Estados Unidos), y de El Zombito Gil, ganador en el Festival Buenos Aires Rojo Sangre 2024. Participa en la miniserie Blake Rox (Cápsula Estudios) y en el cortometraje Dos o tres cosas, de Bruno Pacho.</p>
+    <p>En teatro, forma parte del elenco estable de la Facultad de Psicología de la Universidad de Buenos Aires. Actuó en Relaxting (Teatro Polonia / Pasillo al fondo / Jufré / Savia Espacio Cultural), Las Patrias Ilusorias —convocada al Festival Iberoamericano de Teatro Contemporáneo en Madrid y ganadora del premio Dulce por Amargo de la EDAD, Asturias, España—, Semimontados (teatro La Maza), Bypass —de su autoría, estrenada en Microteatro con la dirección de Juan Faerman—, La Tempestad (British Arts Center y Centro Cultural Rojas), Algo de ruido hace (Timbre 4, dir Juan Parodi), Bernarda Alba Al Desnudo (dir. Germán Akis y Raúl Baroni) y Terapia de Grupo (dir. Virginia Lombardo),  entre otras. Trabaja en publicidad desde 2016 con marcas como Medifé, Philco y Flow.</p>
+    <p>Su formación actoral incluye trabajo con Guillermo Cacace, Claudio Tolcachir y Juan Parodi, entre otros referentes de la escena contemporánea. Se especializó en actuación frente a cámara (UNA), dramaturgia (Centro Cultural Rojas) y guión cinematográfico (Laboratorio de Patricio Vega).
+Coordina Acto Fallido desde 2024 —dictado en el Complejo Teatral Ítaca y en Animal Teatro (Boedo)— y clínicas de dirección escénica junto a Cristian Drut. Su investigación sobre psicodrama y creación colectiva es el eje de este laboratorio, donde convergen su recorrido como actriz, dramaturga y psicóloga.</p>
 </section>
 
 <section id="contacto">
     <h2>Contacto</h2>
-    <p>Instagram / WhatsApp</p>
+    <p style="opacity:0.8;">Podés escribir por mail o Instagram:</p>
+
+   <a href="mailto:talleres.priscilaabitbol@gmail.com
+?subject=Inscripción%20Acto%20Fallido
+&body=Hola%20Priscila,%0A%0AQuiero%20inscribirme%20al%20taller%20Acto%20Fallido.%0A%0A-%20Nombre:%0A-%20Edad:%0A-%20Experiencia:%0A-%20Disponibilidad:%0A%0AGracias!"
+class="floating-btn">
+Inscribirme
+</a>
+
+
+    <a href="https://instagram.com/priabitbol" target="_blank" class="social-btn">
+        📷 @priabitbol
+    </a>
+
+    <a href="https://instagram.com/actofallido_" target="_blank" class="social-btn">
+        🎭 @actofallido_
+    </a>
+</section>
+
+<section id="mapa">
+    <h2>Ubicación</h2>
+    <p style="opacity:0.8;">Animal Teatro (Castro 561 (CABA))</p>
+
+    <div style="margin-top:20px; border-radius:12px; overflow:hidden; box-shadow:0 0 25px rgba(0,0,0,0.6);">
+    <iframe 
+        src="https://www.google.com/maps?q=Castro+561+CABA&output=embed"
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        loading="lazy">
+    </iframe>
+</div>
+    
 </section>
 
 <div class="floating-container">
-    <button class="floating-btn" onclick="openForm()">Inscribirme</button>
+    <a href="mailto:talleres.priscilaabitbol@gmail.com?subject=Inscripción%20Acto%20Fallido&body=Hola,%20quiero%20inscribirme%20al%20taller.%0A%0ANombre:%0AEdad:%0AExperiencia:" 
+   class="floating-btn">
+   Inscribirme
+</a>
     <button class="floating-btn secondary" onclick="scrollToTop()">↑</button>
 </div>
 
@@ -287,7 +371,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
 
 
 // SCROLL PROGRESS
@@ -314,4 +397,5 @@ function openForm() {
 
 </body>
 </html>
+
 
