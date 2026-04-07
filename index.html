@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Acto Fallido - Taller de Psicodrama</title>
 
-<!-- ✅ VERIFICACIÓN GOOGLE -->
-<meta name="google-site-verification" content="google14fd24b804bb4a61.html" />
-
-<!-- ✅ SEO BÁSICO -->
-<meta name="description" content="Acto Fallido: taller de psicodrama donde lo inesperado aparece en escena. No es actuación, no es terapia. Es experiencia.">
-
 <style>
+    .cursiva {
+  font-style: italic;
+}
+
 :root{
   --accent:#ff4d6d;
 }
@@ -142,9 +139,10 @@ h2 {
 
 .section-image:hover{
   transform:scale(1.03);
+  filter:brightness(1);
 }
 
-/* CARDS */
+/* CARDS (fechas) */
 .card{
   background: rgba(255,255,255,0.03);
   padding:20px;
@@ -224,25 +222,38 @@ footer {
 
 <section id="quees">
     <h2>¿Qué es Acto Fallido?</h2>
-    <p> Llegás. No sabés bien qué va a pasar. </p>
-    <p> Hay otros. También están ahí, esperando. Nadie actúa todavía. Nadie sabe del todo qué decir. </p>
-    <p> Y sin embargo, algo empieza. </p>
-    <p> Una escena mínima. Un gesto. Una palabra que no encaja del todo. Algo se escapa. </p> 
-    <p> Acto Fallido no es un taller para aprender a actuar. Tampoco es un espacio tradicional de terapia. </p> 
-    <p> Es un dispositivo grupal donde lo que no estaba previsto aparece en escena. Donde lo que se intenta controlar, falla. </p>
-    <p> Y en ese fallo, se revela algo propio. </p>
-    <p> No hace falta experiencia previa. Solo la disposición a habitar lo que surja. </p>
+
+<p> Acto fallido es un laboratorio presencial que investiga un cruce entre la actuación y el psicodrama desde una perspectiva rizomática. </p>
+<p>Es un espacio de encuentro entre lo singular y lo colectivo, donde el grupo funciona como un dispositivo creador de sentidos. Se trabaja sobre escenas que convoquen al grupo —pueden ser imaginadas, temidas, extraídas de un sueño, de una ficción— para transformarlas en materia escénica colectiva. </p>
+<p> El recorrido no apunta a una obra ni a una representación final, sino a un proceso de investigación performática atravesado por el cuerpo modificado a partir de la experiencia grupal, el juego, el deseo y la potencia del grupo como resonador de nuevas significaciones.</p>
+<p>El proceso se sostiene en la lógica de la Multiplicación Dramática, desarrollada por Pavlovsky, donde cada escena inicial es disparadora de nuevas escenas imaginadas por los otros. En esta lógica rizomática (Deleuze-Guattari), lo personal se multiplica, se deforma, se expande en nuevas significaciones. </p>
+<p>Propone abordar el hecho escénico como territorio donde lo personal se vuelve común y donde lo fallido, el error o el no-saber se integran como material creativo. Permitiendo que la potencia artística emerja fuera del control defensivo.</p>
+<p>Conceptos que se integran desde la experiencia física, modificando al cuerpo a partir de la experiencia sensible entre: <p class="cursiva"> vínculo - presente - espontaneidad - creatividad - estado creativo - grupalidad - modificación - nuevas subjetividades - desinstitucionalización de los hábitos - cartografías del movimiento</p></p>
+
 </section>
 
 <section id="fechas">
     <h2>Próximas fechas</h2>
-    <div class="card">Próximamente más información</div>
-    <div class="card">Próximamente más información</div>
+    <div class="card">Sábado 12 - 18hs</div>
+    <div class="card">Miércoles 16 - 19hs</div>
 </section>
 
 <section id="inscripcion">
     <h2>Inscripción</h2>
-    <div class="card">Formulario próximamente</div>
+    <p>Completá el formulario para reservar tu lugar.</p>
+
+    <div style="margin-top:30px; border-radius:12px; overflow:hidden; box-shadow:0 0 25px rgba(0,0,0,0.6);">
+        <iframe 
+            src="https://docs.google.com/forms/d/e/TU_ID_DE_FORM/viewform?embedded=true" 
+            width="100%" 
+            height="800" 
+            frameborder="0" 
+            marginheight="0" 
+            marginwidth="0"
+            style="background:#111;">
+            Cargando…
+        </iframe>
+    </div>
 </section>
 
 <section id="directora">
@@ -256,7 +267,7 @@ footer {
 </section>
 
 <div class="floating-container">
-    <button class="floating-btn" onclick="scrollToSection('inscripcion')">Inscribirme</button>
+    <button class="floating-btn" onclick="openForm()">Inscribirme</button>
     <button class="floating-btn secondary" onclick="scrollToTop()">↑</button>
 </div>
 
@@ -265,6 +276,7 @@ footer {
 </footer>
 
 <script>
+
 // SCROLL REVEAL
 const sections = document.querySelectorAll("section");
 window.addEventListener("scroll", () => {
@@ -275,6 +287,8 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
 
 // SCROLL PROGRESS
 window.addEventListener("scroll", () => {
@@ -290,7 +304,14 @@ function scrollToTop() {
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
+
+function openForm() {
+    document.getElementById('inscripcion').scrollIntoView({ behavior: 'smooth' });
+};
+
+
 </script>
 
 </body>
 </html>
+
